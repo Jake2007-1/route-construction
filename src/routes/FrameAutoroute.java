@@ -133,12 +133,18 @@ public class FrameAutoroute
             String nbEchan = champNbEchangeurs.getText();
 
             // Créer un objet DecimalFormat pour le formatage de nos montants
+            DecimalFormat df = new DecimalFormat("0.00$");
 
             //  si c'est une route
             if (boutonRoute.isSelected()) {
                 // Créer un objet Route et afficher le coût
+                Route route = new Route(Integer.parseInt(nbKilo),acco,Integer.parseInt(nbPass),Integer.parseInt(nbPo));
+                champCout.setText(df.format(route.calculerCout()));
+
             } else { // si c'est une autoroute
                 // Créer un objet Autoroute et afficher le cout
+                Autoroute autoroute = new Autoroute(Integer.parseInt(nbKilo),acco,Integer.parseInt(nbPass),Integer.parseInt(nbPo), Integer.parseInt(nbEchan));
+                champCout.setText(df.format(autoroute.calculerCout()));
             }
         }
     }
