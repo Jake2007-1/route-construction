@@ -133,7 +133,7 @@ public class FrameAutoroute
             String nbEchan = champNbEchangeurs.getText();
 
             // Créer un objet DecimalFormat pour le formatage de nos montants
-            DecimalFormat df = new DecimalFormat("0.00$");
+            DecimalFormat df = new DecimalFormat("0.00M$");
 
             //  si c'est une route
             if (boutonRoute.isSelected()) {
